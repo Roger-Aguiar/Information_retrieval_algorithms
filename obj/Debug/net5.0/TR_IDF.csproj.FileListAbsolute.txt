@@ -1,0 +1,16 @@
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\TR_IDF.exe
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\TR_IDF.deps.json
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\TR_IDF.runtimeconfig.json
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\TR_IDF.runtimeconfig.dev.json
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\TR_IDF.dll
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\ref\TR_IDF.dll
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\bin\Debug\net5.0\TR_IDF.pdb
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.csprojAssemblyReference.cache
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.AssemblyInfoInputs.cache
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.AssemblyInfo.cs
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.csproj.CoreCompileInputs.cache
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.dll
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\ref\TR_IDF.dll
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.pdb
+C:\Users\Roger\Desktop\Files\Studies\CSharp\Algorithms\InformationRetrieval\TF_IDF\TR_IDF\obj\Debug\net5.0\TR_IDF.genruntimeconfig.cache
