@@ -22,7 +22,7 @@ public class TextFileReader
             textFile += lineOfFile; 
             textFileLineCounter++;
         }       
-        return textFile;
+        return textFile.ToUpper();
     }
 
     public string GetTextFileLayout(string txtFilePath) => $"\n{txtFilePath}\n{textFile}";

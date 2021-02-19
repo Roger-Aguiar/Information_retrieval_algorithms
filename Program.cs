@@ -4,6 +4,7 @@
 //Last update:  February 19, 2021
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace TR_IDF
 {
@@ -13,16 +14,18 @@ namespace TR_IDF
         {
             string documentCollectionContent = null;
             string[] textFiles = Directory.GetFiles(@"TextFiles");
-            
-            Console.WriteLine("Files read by the class.");
-            
+                                    
             foreach (var textFile in textFiles)
             {
                 TextFileReader reader = new TextFileReader();
                 string fileText = reader.ReadTextFile(textFile);  
-                documentCollectionContent += fileText;  
-                
-            }                                   
-        }
+                documentCollectionContent += fileText;                  
+            }  
+
+            VocabularyExtractor vocabularyExtractor = new VocabularyExtractor();
+            List<string> vocabulary = vocabularyExtractor.ExtractVocabulary(documentCollectionContent);
+            Console.WriteLine(vocabularyExtractor.DisplayVocabulary(vocabulary));                     
+        }        
+       
     }
 }
