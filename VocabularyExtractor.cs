@@ -9,10 +9,19 @@ using System.Collections.Generic;
 public class VocabularyExtractor
 {
     private string vocabularyLayout;
+    private string collection;
 
-    public List<string> ExtractVocabulary(string collection)
+    private string file;
+    
+    public string Collection { get => collection; set => collection = value; }
+    
+    public VocabularyExtractor(string collection)
+    {
+        Collection = collection;
+    }
+    public List<string> ExtractVocabulary()
     {        
-        string[] vocabulary = ConvertDocumentToArrayOfWords(collection);
+        string[] vocabulary = ConvertDocumentToArrayOfWords(Collection);
         IEnumerable<string> extractedVocabulary = vocabulary.Distinct();
         return extractedVocabulary.ToList();                
     }

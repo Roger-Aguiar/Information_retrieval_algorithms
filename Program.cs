@@ -12,15 +12,17 @@ namespace TR_IDF
     {
         static void Main(string[] args)
         {      
-            InverseDocumentFrequency inverse = new InverseDocumentFrequency(); 
-            VocabularyExtractor vocabularyExtractor = new VocabularyExtractor();
+            InverseDocumentFrequency inverse = new InverseDocumentFrequency();             
 
             string[] collectionOfDocuments = Directory.GetFiles(@"TextFiles");            
             string documentsFromCollection = inverse.GetDocumentsFromCollection(collectionOfDocuments);
-            List<string> vocabulary = vocabularyExtractor.ExtractVocabulary(documentsFromCollection);
-            int [,] matrixOfInverseFrequency = inverse.GetInverseDocumentFrequency(vocabulary, collectionOfDocuments);            
-            double [,] termFrequenceMatrix = inverse.GetTermFrequencyMatrix(matrixOfInverseFrequency);
-            Console.WriteLine(inverse.GetLayoutOfMatrix(vocabulary, matrixOfInverseFrequency, termFrequenceMatrix));                          
+            
+            VocabularyExtractor vocabularyExtractor = new VocabularyExtractor(documentsFromCollection);
+            List<string> vocabulary = vocabularyExtractor.ExtractVocabulary();
+            Console.WriteLine(vocabularyExtractor.DisplayVocabulary(vocabulary));
+            //int [,] matrixOfInverseFrequency = inverse.GetInverseDocumentFrequency(vocabulary, collectionOfDocuments);            
+            //double [,] termFrequenceMatrix = inverse.GetTermFrequencyMatrix(matrixOfInverseFrequency);
+            //Console.WriteLine(inverse.GetLayoutOfMatrix(vocabulary, matrixOfInverseFrequency, termFrequenceMatrix));                          
         }        
        
     }

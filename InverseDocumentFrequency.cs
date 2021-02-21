@@ -13,7 +13,7 @@ public class InverseDocumentFrequency
 {   
     private string inverseFrequencyMatrixLayout = null;
     
-    public int [,] GetInverseDocumentFrequency(List<string> vocabulary, string [] collectionOfDocuments)
+    /*public int [,] GetInverseDocumentFrequency(List<string> vocabulary, string [] collectionOfDocuments)
     {
         int [,] matrixOfFrequency = new int[vocabulary.Count(),collectionOfDocuments.Count()];
         
@@ -32,7 +32,7 @@ public class InverseDocumentFrequency
             }                
         }    
         return matrixOfFrequency;                              
-    }
+    }*/
     
     public double [,] GetTermFrequencyMatrix(int [,] matrixOfFrequency)
     {
