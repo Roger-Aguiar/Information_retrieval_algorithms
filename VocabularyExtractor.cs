@@ -1,7 +1,7 @@
 //Name:         Roger Silva Santos Aguiar
 //Function:     This class extracts the vocabulary from a collection of documents.
 //Initial date: February 19, 2021
-//Last update:  February 20, 2021
+//Last update:  February 21, 2021
 
 using System;
 using System.Linq;
@@ -10,29 +10,30 @@ public class VocabularyExtractor
 {
     private string vocabularyLayout;
     private string collection;
+    private string [] file = null;
 
-    private string file;
-    
-    public string Collection { get => collection; set => collection = value; }
-    
+    private List<string> vocabulary = new List<string>();
+            
     public VocabularyExtractor(string collection)
     {
         Collection = collection;
     }
     public List<string> ExtractVocabulary()
     {        
-        string[] vocabulary = ConvertDocumentToArrayOfWords(Collection);
-        IEnumerable<string> extractedVocabulary = vocabulary.Distinct();
-        return extractedVocabulary.ToList();                
+        ConvertDocumentToArrayOfWords();        
+        IEnumerable<string> extractedVocabulary = File.Distinct();
+        Vocabulary = extractedVocabulary.ToList();    
+        return Vocabulary;            
     }
 
-    public string[] ConvertDocumentToArrayOfWords(string file)
+    public string[] ConvertDocumentToArrayOfWords()
     {
         char[] separators = {' ', ',', '.', '|', '-', '_', 
                              '{', '}', '(', ')', '[', ']', 
                              '?', '!', ':', ';', '=', '+', 
                              '/', '*', '"', '@', '#', '$', '%', '&'};
-        return file.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+        File = Collection.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+        return File;
     }
 
     public string DisplayVocabulary(List<string> vocabulary)
@@ -44,4 +45,7 @@ public class VocabularyExtractor
 
         return vocabularyLayout;
     }
+    public string Collection { get => collection; set => collection = value; }
+    public List<string> Vocabulary { get => vocabulary; set => vocabulary = value; }
+    public string[] File { get => file; set => file = value; }
 }

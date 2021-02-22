@@ -11,20 +11,31 @@ using System.Linq;
 
 public class InverseDocumentFrequency
 {   
-    private string inverseFrequencyMatrixLayout = null;
-    
-    /*public int [,] GetInverseDocumentFrequency(List<string> vocabulary, string [] collectionOfDocuments)
+    private string[] collectionOfDocuments = null;
+    private string inverseFrequencyMatrixLayout = null;    
+    private string documentsFromCollection = null;
+    int [,] matrixOfFrequency = null;
+    List<string> vocabulary = new List<string>();
+
+    public InverseDocumentFrequency(string[] collectionOfDocuments)
     {
-        int [,] matrixOfFrequency = new int[vocabulary.Count(),collectionOfDocuments.Count()];
+        CollectionOfDocuments = collectionOfDocuments;
+    }
+    public int [,] GetInverseDocumentFrequency()
+    {        
+        VocabularyExtractor vocabularyExtractor = new VocabularyExtractor(DocumentsFromCollection);
+        List<string> vocabulary = vocabularyExtractor.ExtractVocabulary();
+        int [,] matrixOfFrequency = new int[vocabulary.Count(),CollectionOfDocuments.Count()];
         
         for (int wordIndex = 0; wordIndex < vocabulary.Count(); wordIndex++)
         {                
-            for (int documentNumber = 0; documentNumber < collectionOfDocuments.Count(); documentNumber++)
+            for (int documentNumber = 0; documentNumber < CollectionOfDocuments.Count(); documentNumber++)
             {
-                TextFileReader reader = new TextFileReader();
-                VocabularyExtractor extractor = new VocabularyExtractor();
-                string file = reader.ReadTextFile(collectionOfDocuments[documentNumber]);                                   
-                string [] wordsFromDocument = extractor.ConvertDocumentToArrayOfWords(file);       
+                TextFileReader reader = new TextFileReader();                
+                string file = reader.ReadTextFile(CollectionOfDocuments[documentNumber]);      
+                VocabularyExtractor fileConverter = new VocabularyExtractor(file); 
+                                            
+                string [] wordsFromDocument = fileConverter.ConvertDocumentToArrayOfWords();       
                 var termFrequency = from term in wordsFromDocument
                                     where term == vocabulary[wordIndex]
                                     select term;                       
@@ -32,8 +43,8 @@ public class InverseDocumentFrequency
             }                
         }    
         return matrixOfFrequency;                              
-    }*/
-    
+    }
+
     public double [,] GetTermFrequencyMatrix(int [,] matrixOfFrequency)
     {
         double [,] termFrequencyMatrix = new double [matrixOfFrequency.GetLength(0), matrixOfFrequency.GetLength(1)];
@@ -82,17 +93,17 @@ public class InverseDocumentFrequency
         return inverseFrequencyMatrixLayout;
     }
 
-    public string GetDocumentsFromCollection(string [] collectionOfDocuments)
-    {
-        string documentsFromCollection = null;
-
-        foreach (var document in collectionOfDocuments)
-            {
-                TextFileReader reader = new TextFileReader();
-                string file = reader.ReadTextFile(document);  
-                documentsFromCollection += file;                  
-            }  
-        return documentsFromCollection;
+    public void GetDocumentsFromCollection()
+    {        
+        foreach (var document in CollectionOfDocuments)
+        {
+            TextFileReader reader = new TextFileReader();
+            string file = reader.ReadTextFile(document);  
+            DocumentsFromCollection += file;                  
+        }          
     }
-
+    public string[] CollectionOfDocuments { get => collectionOfDocuments; set => collectionOfDocuments = value; }
+    public string DocumentsFromCollection { get => documentsFromCollection; set => documentsFromCollection = value; }
+    public int[,] MatrixOfFrequency { get => matrixOfFrequency; set => matrixOfFrequency = value; }
+    public List<string> Vocabulary { get => vocabulary; set => vocabulary = value; }
 }
