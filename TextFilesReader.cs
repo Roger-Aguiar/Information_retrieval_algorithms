@@ -10,20 +10,30 @@ using System.Text;
 public class TextFileReader
 {
     private string textFile;
+    private string txtFile;
+    string txtFilePath;
 
-    public string ReadTextFile(string txtFile)
+    public TextFileReader(string txtFile)
+    {
+        TxtFile = txtFile;
+    }
+    
+    public string ReadTextFile()
     {               
         string lineOfFile;
                
-        System.IO.StreamReader file = new System.IO.StreamReader(txtFile);
+        System.IO.StreamReader file = new System.IO.StreamReader(TxtFile);
 
         for(int textFileLineCounter = 0; (lineOfFile = file.ReadLine()) != null; textFileLineCounter++)
         {
-            textFile += lineOfFile; 
+            this.textFile += lineOfFile; 
             textFileLineCounter++;
         }       
-        return textFile.ToUpper();
+        return this.textFile.ToUpper();
     }
 
-    public string GetTextFileLayout(string txtFilePath) => $"\n{txtFilePath}\n{textFile}";
+    public string GetTextFileLayout() => $"\n{TxtFilePath}\n{this.textFile}";
+
+    public string TxtFile { get => txtFile; set => txtFile = value; }
+    public string TxtFilePath { get => txtFilePath; set => txtFilePath = value; }
 }
