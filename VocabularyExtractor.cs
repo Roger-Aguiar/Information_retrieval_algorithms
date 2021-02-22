@@ -11,7 +11,6 @@ public class VocabularyExtractor
     private string vocabularyLayout;
     private string collection;
     private string [] file = null;
-
     private List<string> vocabulary = new List<string>();
             
     public VocabularyExtractor(string collection)
@@ -36,12 +35,12 @@ public class VocabularyExtractor
         return File;
     }
 
-    public string DisplayVocabulary(List<string> vocabulary)
+    public string DisplayVocabulary()
     {
         vocabularyLayout += "Index\tTerms\n";
 
-        for(int indexVocabulary = 0; indexVocabulary < vocabulary.Count; indexVocabulary++)            
-            vocabularyLayout += $"{(indexVocabulary + 1).ToString()}\t{vocabulary[indexVocabulary]}\n"; 
+        for(int indexVocabulary = 0; indexVocabulary < Vocabulary.Count; indexVocabulary++)            
+            vocabularyLayout += $"{(indexVocabulary + 1).ToString()}\t{Vocabulary[indexVocabulary]}\n"; 
 
         return vocabularyLayout;
     }
